@@ -1,9 +1,8 @@
-package Parser;
+package TestParser;
 
 public class ParsingException extends RuntimeException {
     private static final long serialVersionUID = -703489719521345831L;
 
-    private String string;
     private int index;
 
     public ParsingException() {
@@ -23,8 +22,8 @@ public class ParsingException extends RuntimeException {
     }
 
     protected ParsingException(String message, Throwable cause,
-                            boolean enableSuppression,
-                            boolean writableStackTrace) {
+                               boolean enableSuppression,
+                               boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 

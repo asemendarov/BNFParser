@@ -1,6 +1,6 @@
 package Parser;
 
-import Token.ListToken;
+import Token.ListTokenIterator;
 
 public class Parsing {
     private AbstractParsing parsing;
@@ -9,7 +9,7 @@ public class Parsing {
         this.parsing = parsing;
     }
 
-    public ListToken parsing(){
+    public ListTokenIterator parsing(){
         return parsing.parsing();
     }
 }

@@ -4,8 +4,11 @@ public enum TypeToken {
 
     TEST("Test"),
 
+    DIGIT("Digit"),
+    LETTER("Letter"),
+
     // Word
-    PROGRAM("Program"),
+    PROGRAM("Programm"),
     EQUATIONS("Equations"),
     BEGIN_CONDITIONS("BeginConditions"),
     INTEGRATION_CONDITIONS("IntegrationConditions"),

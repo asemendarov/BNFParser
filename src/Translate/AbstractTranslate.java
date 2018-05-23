@@ -1,16 +1,16 @@
 package Translate;
 
-import Token.ListToken;
+import Token.ListTokenIterator;
 
 public abstract class AbstractTranslate {
-    private ListToken listToken;
-    public AbstractTranslate(ListToken listToken){
+    private ListTokenIterator listToken;
+    public AbstractTranslate(ListTokenIterator listToken){
         this.listToken = listToken;
     }
 
     public abstract String translate();
 
-    public ListToken getListToken() {
+    public ListTokenIterator getListToken() {
         return listToken;
     }
 }

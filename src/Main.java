@@ -7,15 +7,24 @@
  */
 
 import Parser.BNFParsing;
-import Token.ListToken;
+import Parser.ParsingException;
+import Token.ListTokenIterator;
+import Tool.ConsoleProxy;
+import Tool.LoggerProxy;
 
 public class Main {
+    public static String text = "\t\n Programm m 231 fw12";
     public static void main(String[] args){
-        Helper helper = new Helper();
-        helper.parsing(new BNFParsing("1 \t  \n 23"));
-        ListToken listToken = helper.getListToken();
-        while (listToken.hasNext()){
-            System.out.println(listToken.next());
+        try {
+            Helper helper = new Helper();
+            ListTokenIterator listToken = helper.parsing(new BNFParsing(text));
+            while (listToken.hasNext()){
+                System.out.println("ListToken: ");
+                System.out.println(listToken.next());
+            }
+        }
+        catch (ParsingException ex){
+            ConsoleProxy.print(ex, text); // Дерьмо
         }
     }
 }

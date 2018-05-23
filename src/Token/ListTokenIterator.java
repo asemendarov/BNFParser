@@ -5,15 +5,11 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Objects;
 
-public class ListToken { // Proxy
+public class ListTokenIterator { // Proxy
     private ListIterator<Token> listToken;
 
-    public ListToken(){
-       listToken = new ArrayList<Token>().listIterator();
-    }
-
-    public ListToken(List<Token> list){
-        listToken = list.listIterator();
+    public ListTokenIterator(ArrayListToken listToken){
+       this.listToken = listToken.listIterator();
     }
 
     // возвращает true, если в коллекции имеется следующий элемент, иначе возвращает false

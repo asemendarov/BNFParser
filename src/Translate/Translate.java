@@ -1,6 +1,6 @@
 package Translate;
 
-import Token.ListToken;
+import Token.ListTokenIterator;
 
 public class Translate {
     private AbstractTranslate translate;
@@ -9,7 +9,7 @@ public class Translate {
         this.translate = translate;
     }
 
-    public String translate(ListToken listToken){
+    public String translate(ListTokenIterator listToken){
         return this.translate.translate();
     }
 }

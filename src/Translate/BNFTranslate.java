@@ -1,10 +1,10 @@
 package Translate;
 
-import Token.ListToken;
+import Token.ListTokenIterator;
 
 public class BNFTranslate extends AbstractTranslate {
 
-    public BNFTranslate(ListToken listToken) {
+    public BNFTranslate(ListTokenIterator listToken) {
         super(listToken);
     }
 
