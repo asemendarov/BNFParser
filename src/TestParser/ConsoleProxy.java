@@ -23,12 +23,17 @@ public class ConsoleProxy {
 
         stringBuilder.replace(index, index + 1, ANSI_RED + string.charAt(index) + ANSI_RESET);
 
-        stringBuilder.append("\n\n" + ANSI_RED + "ParsingException: " + ANSI_RESET).append(ex.getMessage()).append("\n\n");
+        stringBuilder = new StringBuilder("\n" + ANSI_RED + ">> Возникла ошибка при разборе БНФ" + ANSI_RESET + "\n\n" + stringBuilder);
+        stringBuilder.append("\n\n" + ANSI_RED + ">> ParsingException: " + ANSI_RESET).append(ex.getMessage()).append("\n\n");
 
         System.out.println(stringBuilder.toString());
     }
 
     public static void print(Exception ex){
         System.err.println(ex.getMessage());
+    }
+
+    public static void print(String string){
+        System.out.println(string);
     }
 }

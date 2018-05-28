@@ -11,6 +11,18 @@ public class MathSolver {
     private static final ScriptEngineManager manager = new ScriptEngineManager();
     private static final ScriptEngine engine = manager.getEngineByName("js");
 
+    public static class FlagException{
+        private static Exception e = null;
+
+        FlagException(Exception ex){
+            e = ex;
+        }
+
+        public static Exception get(){
+            return e;
+        }
+    }
+
     public static double solv(String equation, Map<String, String> params) throws Exception {
 
 //        System.out.println(equation);
@@ -30,8 +42,10 @@ public class MathSolver {
 
             return printTest;
         } catch (ScriptException e) {
+            new FlagException(e);
             throw new Exception("Не удалось решить уравнение. " + e.getMessage());
         } catch (Exception e) {
+            new FlagException(e);
             throw new Exception("Что-то пошло не так, при решении уравнения. " + e.getMessage());
         }
     }

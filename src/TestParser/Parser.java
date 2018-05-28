@@ -6,20 +6,12 @@ public class Parser extends ParserBase {
     void parse(String text){
         super.text = text;
 
-        try {
-            program();
-            equations();
-            begin_conditions();
-            integration_conditions();
-        }
-        catch (ParsingException ex){
-            ConsoleProxy.print(ex, text); // Дерьмо
-        }
-        catch (Exception ex){
-            ConsoleProxy.print(ex);
-        }
+        program();
+        equations();
+        begin_conditions();
+        integration_conditions();
 
-        System.out.println(integrator);
+//        System.out.println(integrator);
 
 //        try {
 //            System.out.println(integrator.euler()); // Test
